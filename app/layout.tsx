@@ -4,8 +4,9 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Brake.net",
-  description: "Modern web, system, app, design, and digital marketing solutions."
+  title: "Brake.net | Modern Digital Studio",
+  description:
+    "Brake.net builds modern web, system, app, design, and digital marketing experiences for growing brands."
 };
 
 export default function RootLayout({
