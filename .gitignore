@@ -1,5 +1,7 @@
 .next
+.next/cache
+.vercel
+out
 node_modules
 *.log
 dist
-out
