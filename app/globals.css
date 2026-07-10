@@ -321,6 +321,263 @@ a:hover {
   resize: vertical;
 }
 
+.form input:focus,
+.form textarea:focus,
+.admin-toolbar input:focus,
+.admin-toolbar select:focus,
+.admin-login input:focus,
+.reply-card textarea:focus {
+  outline: 2px solid rgba(240, 32, 44, 0.22);
+  outline-offset: 2px;
+  border-color: rgba(240, 32, 44, 0.42);
+}
+
+.hidden-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  width: 0;
+}
+
+.field-error {
+  color: #c53030;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.submit-btn:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+.submit-btn .spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+}
+
+.success-banner {
+  padding: 18px 22px;
+  margin-bottom: 20px;
+}
+
+.success-banner strong,
+.success-banner span {
+  display: block;
+}
+
+.success-banner strong {
+  margin-bottom: 4px;
+}
+
+.toast-stack {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.toast {
+  width: min(360px, calc(100vw - 36px));
+  border-radius: 20px;
+  padding: 16px 18px;
+  box-shadow: 0 18px 40px rgba(12, 31, 48, 0.18);
+  border: 1px solid rgba(12, 31, 48, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.toast strong,
+.toast p {
+  margin: 0;
+}
+
+.toast p {
+  margin-top: 4px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.toast-success {
+  background: rgba(237, 255, 243, 0.96);
+}
+
+.toast-error {
+  background: rgba(255, 240, 240, 0.96);
+}
+
+.toast-info {
+  background: rgba(245, 248, 252, 0.96);
+}
+
+.admin-login {
+  display: grid;
+  gap: 16px;
+  max-width: 460px;
+  padding: 28px;
+}
+
+.admin-login label {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.admin-login input,
+.admin-toolbar input,
+.admin-toolbar select,
+.reply-card textarea {
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(12, 31, 48, 0.12);
+  background: rgba(255, 255, 255, 0.76);
+  padding: 14px 16px;
+  font: inherit;
+}
+
+.admin-shell {
+  display: grid;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.admin-toolbar {
+  display: grid;
+  grid-template-columns: 1.4fr 0.7fr auto;
+  gap: 14px;
+  padding: 18px;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  padding: 18px;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 2rem;
+}
+
+.stat-card span {
+  color: var(--muted);
+}
+
+.admin-table {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+.message-row {
+  display: grid;
+  grid-template-columns: 1.2fr auto;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(12, 31, 48, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.message-row strong,
+.message-row span,
+.message-row p {
+  display: block;
+}
+
+.message-row span,
+.message-row p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.message-actions {
+  display: grid;
+  gap: 10px;
+  justify-items: end;
+}
+
+.status {
+  display: inline-flex;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.status-new {
+  background: rgba(240, 32, 44, 0.12);
+  color: var(--red);
+}
+
+.status-read {
+  background: rgba(12, 31, 48, 0.08);
+  color: var(--navy);
+}
+
+.status-replied {
+  background: rgba(68, 160, 110, 0.12);
+  color: #22704a;
+}
+
+.reply-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 31, 48, 0.36);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  z-index: 1200;
+}
+
+.reply-card {
+  width: min(720px, 100%);
+  padding: 24px;
+  background: white;
+}
+
+.reply-card textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.reply-card form {
+  display: grid;
+  gap: 16px;
+}
+
+.admin-page .contact-grid {
+  margin-top: 32px;
+}
+
+.admin-page .section-title {
+  max-width: 12ch;
+}
+
+.reply-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 800px) {
   .footer-grid,
   .services-page .service-grid,
@@ -332,6 +589,19 @@ a:hover {
   .cta {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .admin-toolbar,
+  .message-row {
+    grid-template-columns: 1fr;
+  }
+
+  .message-actions {
+    justify-items: start;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
   }
 }
 
