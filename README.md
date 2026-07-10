@@ -46,3 +46,7 @@ Copy `.env.example` to your Cloudflare Pages environment variables and set:
 ## Database
 
 Create a Cloudflare D1 database named `brake-net` and apply `d1/schema.sql` to it.
+
+## Deployment reminder
+
+After pushing to `main`, trigger a fresh Cloudflare Pages deploy so the latest commit is used.
