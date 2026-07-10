@@ -124,11 +124,15 @@ export function ContactForm() {
       const payload = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        setErrors(payload.errors ?? { form: payload.error ?? "Something went wrong." });
+        const serverError =
+          typeof payload.error === "string"
+            ? payload.error
+            : "Something went wrong.";
+        setErrors(payload.errors ?? { form: serverError });
         toast({
           type: "error",
           title: "Message not sent",
-          description: payload.error ?? "Please try again."
+          description: serverError
         });
         return;
       }

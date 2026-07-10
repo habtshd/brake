@@ -33,6 +33,16 @@ function isAllowedOrigin(request: Request, siteUrl?: string) {
 
 export async function onRequestPost({ request, env, waitUntil }: any) {
   try {
+    if (!env.DB) {
+      return json(
+        {
+          error:
+            "Contact storage is not configured on the server yet. Add the Cloudflare D1 binding for DB to enable submissions."
+        },
+        { status: 503 }
+      );
+    }
+
     if (!isAllowedOrigin(request, env.SITE_URL)) {
       return forbidden("Invalid request origin.");
     }
@@ -147,7 +157,9 @@ export async function onRequestPost({ request, env, waitUntil }: any) {
       );
     }
 
-    waitUntil(Promise.allSettled(emailTasks));
+    if (emailTasks.length > 0) {
+      waitUntil(Promise.allSettled(emailTasks));
+    }
 
     return json(
       {
