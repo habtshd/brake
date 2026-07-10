@@ -38,12 +38,11 @@ export default function HomePage() {
           <div className="hero-copy">
             <span className="badge">Modern digital studio</span>
             <h1>
-              Brake.net builds <span>web, app, design, and marketing</span> systems
-              with a clean modern edge.
+              Brake.net builds <span>web, app, design, and marketing</span> systems.
             </h1>
             <p>
-              We create transparent, engaging, and high-clarity digital experiences
-              for organizations that want to look premium and perform better online.
+              We create calm, high-clarity digital experiences for organizations that
+              want a premium brand presence and reliable growth.
             </p>
             <div className="hero-actions">
               <Link href="/contact" className="btn btn-primary">
@@ -53,24 +52,44 @@ export default function HomePage() {
                 Explore Services
               </Link>
             </div>
+            <div className="hero-meta">
+              <div>
+                <strong>Brake Design</strong>
+                <span>Identity and visual direction</span>
+              </div>
+              <div>
+                <strong>Brake Market</strong>
+                <span>Promotion and growth campaigns</span>
+              </div>
+            </div>
           </div>
 
           <div className="hero-visual card">
-            <div className="orb orb-a" />
-            <div className="orb orb-b" />
-            <div className="badge floating">Brake.net</div>
-            <div className="visual-panel glass">
-              <div className="mini">
-                <strong>Brake Design</strong>
-                <span>Brand visuals</span>
+            <div className="visual-panel">
+              <div className="panel-top">
+                <span className="badge">Brake.net</span>
+                <span className="panel-chip">Design • Development • Growth</span>
               </div>
-              <div className="mini accent">
-                <strong>Brake Market</strong>
-                <span>Digital promotion</span>
-              </div>
-              <div className="mini">
-                <strong>Development</strong>
-                <span>Systems and apps</span>
+
+              <div className="panel-illustration">
+                <div className="shape shape-a" />
+                <div className="shape shape-b" />
+                <div className="dashboard">
+                  <div className="dashboard-row">
+                    <div className="dash-card dash-primary">
+                      <strong>Web systems</strong>
+                      <span>Fast, responsive, scalable</span>
+                    </div>
+                    <div className="dash-card">
+                      <strong>Brand design</strong>
+                      <span>Clean and consistent identity</span>
+                    </div>
+                  </div>
+                  <div className="dash-card dash-wide">
+                    <strong>Digital promotion</strong>
+                    <span>Targeted campaigns and visibility</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -116,34 +135,34 @@ export default function HomePage() {
 
       <style jsx>{`
         .hero {
-          padding-top: 34px;
+          padding-top: 28px;
         }
 
         .hero-grid {
           display: grid;
-          grid-template-columns: 1.1fr 0.9fr;
-          gap: 28px;
+          grid-template-columns: 1.05fr 0.95fr;
+          gap: 42px;
           align-items: center;
-          min-height: calc(100vh - 120px);
+          min-height: calc(100vh - 140px);
         }
 
         .hero-copy h1 {
-          font-size: clamp(3rem, 6vw, 5.8rem);
-          line-height: 0.96;
-          letter-spacing: -0.07em;
+          font-size: clamp(2.8rem, 5vw, 5rem);
+          line-height: 1.02;
+          letter-spacing: -0.06em;
           margin: 18px 0;
-          max-width: 10ch;
+          max-width: 12ch;
         }
 
         .hero-copy h1 span {
-          color: var(--red);
+          color: #d62f37;
         }
 
         .hero-copy p {
           color: var(--muted);
-          max-width: 620px;
-          font-size: 1.1rem;
-          line-height: 1.9;
+          max-width: 580px;
+          font-size: 1.03rem;
+          line-height: 1.85;
         }
 
         .hero-actions {
@@ -153,71 +172,150 @@ export default function HomePage() {
           margin-top: 26px;
         }
 
-        .hero-visual {
-          position: relative;
-          padding: 26px;
-          min-height: 560px;
-          overflow: hidden;
-        }
-
-        .orb {
-          position: absolute;
-          border-radius: 999px;
-          filter: blur(4px);
-        }
-
-        .orb-a {
-          width: 320px;
-          height: 320px;
-          background: rgba(240, 32, 44, 0.16);
-          top: -90px;
-          right: -80px;
-        }
-
-        .orb-b {
-          width: 300px;
-          height: 300px;
-          background: rgba(12, 31, 48, 0.12);
-          bottom: -120px;
-          left: -120px;
-        }
-
-        .floating {
-          position: absolute;
-          top: 22px;
-          left: 22px;
-        }
-
-        .visual-panel {
-          position: absolute;
-          inset: 112px 26px 26px;
-          border-radius: 34px;
-          padding: 26px;
+        .hero-meta {
           display: grid;
-          grid-template-columns: 1fr;
-          gap: 18px;
-          align-content: center;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 14px;
+          margin-top: 28px;
         }
 
-        .mini {
-          padding: 20px 22px;
-          border-radius: 24px;
-          background: rgba(255, 255, 255, 0.8);
+        .hero-meta div {
+          padding: 16px 18px;
+          border-radius: 20px;
+          background: rgba(255, 255, 255, 0.58);
           border: 1px solid rgba(12, 31, 48, 0.08);
         }
 
-        .mini strong {
+        .hero-meta strong {
           display: block;
-          font-size: 1.05rem;
+          margin-bottom: 6px;
+          font-size: 0.98rem;
+        }
+
+        .hero-meta span {
+          display: block;
+          color: var(--muted);
+          line-height: 1.5;
+          font-size: 0.92rem;
+        }
+
+        .hero-visual {
+          position: relative;
+          padding: 22px;
+          min-height: 620px;
+          overflow: hidden;
+          background:
+            radial-gradient(circle at top right, rgba(240, 32, 44, 0.12), transparent 34%),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 251, 253, 0.72));
+        }
+
+        .visual-panel {
+          position: relative;
+          height: 100%;
+          border-radius: 32px;
+          border: 1px solid rgba(12, 31, 48, 0.08);
+          background:
+            radial-gradient(circle at top left, rgba(12, 31, 48, 0.05), transparent 24%),
+            radial-gradient(circle at 80% 18%, rgba(240, 32, 44, 0.12), transparent 22%),
+            rgba(255, 255, 255, 0.72);
+          padding: 24px;
+          overflow: hidden;
+        }
+
+        .panel-top {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+        }
+
+        .panel-chip {
+          font-size: 0.82rem;
+          font-weight: 700;
+          color: var(--muted);
+          background: rgba(255, 255, 255, 0.8);
+          border: 1px solid rgba(12, 31, 48, 0.08);
+          border-radius: 999px;
+          padding: 8px 14px;
+        }
+
+        .panel-illustration {
+          position: absolute;
+          inset: 86px 24px 24px;
+          border-radius: 28px;
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.95));
+          border: 1px solid rgba(12, 31, 48, 0.06);
+          overflow: hidden;
+        }
+
+        .shape {
+          position: absolute;
+          border-radius: 999px;
+          filter: blur(8px);
+        }
+
+        .shape-a {
+          width: 280px;
+          height: 280px;
+          top: -110px;
+          right: -60px;
+          background: rgba(240, 32, 44, 0.12);
+        }
+
+        .shape-b {
+          width: 260px;
+          height: 260px;
+          left: -110px;
+          bottom: -100px;
+          background: rgba(12, 31, 48, 0.08);
+        }
+
+        .dashboard {
+          position: absolute;
+          inset: 34px;
+          display: grid;
+          gap: 16px;
+          align-content: end;
+        }
+
+        .dashboard-row {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 16px;
+        }
+
+        .dash-card {
+          min-height: 128px;
+          padding: 22px;
+          border-radius: 24px;
+          background: rgba(255, 255, 255, 0.86);
+          border: 1px solid rgba(12, 31, 48, 0.08);
+          box-shadow: 0 18px 40px rgba(12, 31, 48, 0.08);
+        }
+
+        .dash-primary {
+          background: linear-gradient(135deg, rgba(240, 32, 44, 0.1), rgba(255, 255, 255, 0.88));
+        }
+
+        .dash-wide {
+          min-height: 150px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          background:
+            linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.78)),
+            radial-gradient(circle at right top, rgba(240, 32, 44, 0.08), transparent 32%);
+        }
+
+        .dash-card strong {
+          display: block;
+          font-size: 1rem;
           margin-bottom: 8px;
         }
 
-        .mini span {
+        .dash-card span {
           color: var(--muted);
-        }
-
-        .mini.accent {
-          background: linear-gradient(135deg, rgba(240, 32, 44, 0.14), rgba(255, 255, 255, 0.9));
+          line-height: 1.6;
         }
 
         .stats-grid {
@@ -235,8 +333,20 @@ export default function HomePage() {
             min-height: auto;
           }
 
+          .hero-meta {
+            grid-template-columns: 1fr;
+          }
+
           .stats-grid,
           .services-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .hero-visual {
+            min-height: 520px;
+          }
+
+          .dashboard-row {
             grid-template-columns: 1fr;
           }
         }
