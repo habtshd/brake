@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { CTA, ServiceCard, Stat } from "@/components/SectionBlocks";
 
 const services = [
@@ -36,12 +35,7 @@ export default function HomePage() {
     <>
       <section className="hero section">
         <div className="container hero-grid">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55 }}
-            className="hero-copy"
-          >
+          <div className="hero-copy">
             <span className="badge">Modern digital studio</span>
             <h1>
               Brake.net builds <span>web, app, design, and marketing</span> systems
@@ -59,14 +53,9 @@ export default function HomePage() {
                 Explore Services
               </Link>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="hero-visual card"
-          >
+          <div className="hero-visual card">
             <div className="orb orb-a" />
             <div className="orb orb-b" />
             <div className="badge floating">Brake.net</div>
@@ -84,7 +73,7 @@ export default function HomePage() {
                 <span>Systems and apps</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
