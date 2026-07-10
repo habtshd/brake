@@ -96,13 +96,9 @@ export default function HomePage() {
 
           <div className="grid services-grid">
             {services.map((service) => (
-              <motion.div
-                key={service.title}
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.2 }}
-              >
+              <div key={service.title}>
                 <ServiceCard {...service} />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
